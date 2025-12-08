@@ -44,13 +44,13 @@ At its core, the system utilizes a custom **Habitability Algorithm** that dynami
 
 The application follows a classic **Three-Tier Architecture** to ensure scalability and separation of concerns.
 
-> **[Insert your Architecture Diagram image here]**
+> ![Architecture Diagram](assets/architecture.png)
 > *Data flows from the Client (HTML/CSS) -> Server (Node.js) -> Database (PostgreSQL).*
 
 ### Database Schema
 Our relational database is normalized to handle complex astronomical relationships efficiently.
 
-> **[Insert your ER Diagram image here]**
+> ![ER Diagram](assets/er_diagram.png)
 > *One Star has Many Planets; One Planet has One Observation.*
 
 ---
@@ -81,3 +81,7 @@ Follow these steps to run the project locally.
    ```bash
    git clone [https://github.com/YOUR_USERNAME/celestial-voyager-db.git](https://github.com/YOUR_USERNAME/celestial-voyager-db.git)
    cd celestial-voyager-db
+
+   ##  License & Academic Integrity
+This project was created for the **Data Base Management SystemCourse** at **Rajagiri School of Engineering and Technology**.
+It is intended for educational purposes only. Please do not copy this code for your own coursework to avoid plagiarism.

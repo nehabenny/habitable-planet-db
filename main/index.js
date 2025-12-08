@@ -7,6 +7,7 @@ const db = require('./db');
 
 // --- App Initialization ---
 const app = express();
+app.use(express.static('public'));
 const PORT = process.env.PORT || 5000;
 
 // --- Middleware ---

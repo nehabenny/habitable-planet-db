@@ -80,6 +80,7 @@ app.get('/api/stars', async (req, res) => {
         const result = await db.query('SELECT * FROM stars ORDER BY star_name');
         res.status(200).json(result.rows);
     } catch (err) {
+     console.error("THE REAL ERROR IS:", err);//add
         res.status(500).json({ error: 'Failed to fetch stars' });
     }
 });

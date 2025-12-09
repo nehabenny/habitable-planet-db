@@ -39,7 +39,35 @@ At its core, the system utilizes a custom **Habitability Algorithm** that dynami
 - **Role-Based Access Control (RBAC):** Secure login ensures only verified researchers can modify the scientific database.
 
 ---
+##  Gallery
 
+<details>
+<summary> Click to view screenshots</summary>
+
+### 1. Interactive 3D Galaxy Map
+Navigable 3D view of star systems using Three.js.
+![Galaxy View](assets/screenshot_galaxy.png)
+
+### 2. Planet Analysis & Habitability Score
+Real-time calculation showing a planet's potential for life (e.g., TRAPPIST-1 e).
+![Habitability Score](assets/screenshot_planet_score.png)
+
+### 3. Researcher Dashboard
+Secure admin panel for adding new celestial discoveries.
+![Researcher Panel](assets/screenshot_researcher.png)
+
+### 4. Interactive Planet Viewer
+A real-time 3D visualization where users can explore planets and view calculated habitability scores.
+![Planet Viewer](assets/screenshot_interactive_planet_viewer.png)
+
+### 5. Secure Login & Registration
+Role-based authentication system ensuring secure access for Researchers.
+![Login Screen](assets/screenshot_login_or_signin.png)
+
+
+</details>
+
+---
 ##  System Architecture
 
 The application follows a classic **Three-Tier Architecture** to ensure scalability and separation of concerns.
@@ -77,11 +105,59 @@ Follow these steps to run the project locally.
 
 ### Installation
 
-1. **Clone the Repository**
-   ```bash
-   git clone [https://github.com/YOUR_USERNAME/celestial-voyager-db.git](https://github.com/YOUR_USERNAME/celestial-voyager-db.git)
-   cd celestial-voyager-db
+1.  **Clone the Repository**
+    ```bash
+    git clone https://github.com/nehabenny/celestial-voyager-db.git
+    cd celestial-voyager-db
+    ```
 
-   ##  License & Academic Integrity
-This project was created for the **Data Base Management SystemCourse** at **Rajagiri School of Engineering and Technology**.
+2.  **Install Dependencies**
+    Navigate to the backend folder and install the required packages:
+    ```bash
+    cd main
+    npm install
+    ```
+
+3.  **🗄️ Database Setup**
+    * **Create the Database**: Open your terminal or pgAdmin and run:
+        ```sql
+        CREATE DATABASE habitable_planet_db_a9cz;
+        ```
+    * **Import the Schema**: Run the included `database.sql` file (located in the root folder) to create the tables.
+        ```bash
+        # If using terminal (navigate back to root first):
+        cd ..
+        psql -U postgres -d habitable_planet_db_a9cz -f database.sql
+        ```
+
+4.  **⚙️ Configuration (.env)**
+    Create a `.env` file inside the `main` folder (or root, depending on your setup) and add:
+    ```env
+    PORT=5000
+    DATABASE_URL="postgresql://postgres:your_password@localhost:5432/habitable_planet_db_a9cz"
+    JWT_SECRET="your_secret_key_here"
+    ```
+
+5.  **Run the Application**
+    ```bash
+    # Inside the 'main' folder:
+    node index.js
+    ```
+    Open your browser and go to `http://localhost:5000`.
+
+---
+
+##  Usage & Testing
+
+To test the **Researcher (Admin)** features, use the default credentials provided in `database.sql`:
+
+* **Username:** `testuser`
+* **Password:** `password` (or register a new user)
+
+---
+
+## License & Academic Integrity
+
+This project was created for the **Database Management System Course** at **Rajagiri School of Engineering and Technology**.
+
 It is intended for educational purposes only. Please do not copy this code for your own coursework to avoid plagiarism.

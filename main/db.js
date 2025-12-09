@@ -1,11 +1,10 @@
 const { Pool } = require('pg');
-require('dotenv').config(); // Re-enabled
+require('dotenv').config();
 
 const pool = new Pool({
-    // Changed back to use the .env file
     connectionString: process.env.DATABASE_URL,
     ssl: {
-        rejectUnauthorized: false
+        rejectUnauthorized: false // <--- THIS IS CRITICAL
     }
 });
 
